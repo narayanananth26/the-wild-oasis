@@ -13,5 +13,6 @@ export function useCreateCabin() {
 		},
 		onError: (err) => toast.err(err.message),
 	});
+
 	return { isCreating, createCabin };
 }

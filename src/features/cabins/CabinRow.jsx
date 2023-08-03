@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { useDeleteCabin } from "./useDeleteCabin";
 
 import { formatCurrency } from "../../utils/helpers";
+
 import CreateCabinForm from "./CreateCabinForm";
 
 const TableRow = styled.div`
@@ -49,6 +50,7 @@ const Discount = styled.div`
 
 function CabinRow({ cabin }) {
 	const [showForm, setShowForm] = useState(false);
+	const { isDeleting, deleteCabin } = useDeleteCabin();
 
 	const {
 		id: cabinId,
@@ -58,8 +60,6 @@ function CabinRow({ cabin }) {
 		discount,
 		image,
 	} = cabin;
-
-	const { isDeleting, deleteCabin } = useDeleteCabin();
 
 	return (
 		<>
