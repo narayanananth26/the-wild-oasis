@@ -65,16 +65,26 @@ function CabinRow({ cabin }) {
 
 	return (
 		<Table.Row>
-			<Img src={image} />
-			<Cabin>{name}</Cabin>
-			<div>Fits up to {maxCapacity} guests</div>
-			<Price>{formatCurrency(regularPrice)}</Price>
+			<td>
+				<Img src={image} />
+			</td>
+			<td>
+				<Cabin>{name}</Cabin>
+			</td>
+			<td>Fits up to {maxCapacity} guests</td>
+			<td>
+				<Price>{formatCurrency(regularPrice)}</Price>
+			</td>
 			{discount ? (
-				<Discount>{formatCurrency(discount)}</Discount>
+				<td>
+					<Discount>{formatCurrency(discount)}</Discount>
+				</td>
 			) : (
-				<span>&mdash;</span>
+				<td>
+					<span>&mdash;</span>
+				</td>
 			)}
-			<div>
+			<td>
 				<button disabled={isCreating} onClick={handleDuplicate}>
 					<HiSquare2Stack />
 				</button>
@@ -101,7 +111,7 @@ function CabinRow({ cabin }) {
 						/>
 					</Modal.Window>
 				</Modal>
-			</div>
+			</td>
 		</Table.Row>
 	);
 }
