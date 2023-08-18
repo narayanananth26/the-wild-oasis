@@ -87,6 +87,7 @@ function SignupForm() {
 					variation="secondary"
 					type="reset"
 					disabled={isSigningup}
+					onClick={reset}
 				>
 					Cancel
 				</Button>
